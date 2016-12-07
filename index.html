@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVVM patern</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/html" id="itemSlaveShow">
+
+        <div class="ms-slave-item" data-bind="visible: $root.getMasterId() === slave.country_id ">
+            <p data-bind="text: $root.showSlave"></p>
+            <div class="ms-slave-item-info">
+                <input type="hidden" id="slaveid" data-bind="value:slave.id">
+                <p class="ms-slave-item-title" data-bind="text:slave.title"></p>
+                <p class="ms-slave-item-desc" data-bind="text:slave.desc"></p>
+            </div>
+            <div class="ms-slave-item-option">
+                <span class="glyphicon glyphicon-pencil" data-bind="click: $root.editSlave"></span>&nbsp;
+                <span class="glyphicon glyphicon-trash" data-bind="click: $root.deleteSlave"></span>
+            </div>
+        </div>
+
+     </script>
+
+
+    <script type="text/html" id="itemSlaveEdit">
+
+        <div class="ms-slave-item">
+            <p>Edit city <span data-bind="text:slave.title"></span></p>
+            <input type="hidden" id="slaveid-e" data-bind="value:slave.id">
+            <input type="hidden" id="countryid-e" data-bind="value:slave.country_id">
+            <input type="text" id="ms-slave-item-title-e" class="ms-slave-item-title" placeholder="City name..." data-bind="value:$root.editSlaveValue.title">
+            <textarea id="ms-slave-item-desc-e" class="ms-slave-item-desc" placeholder="City description..." data-bind="value:$root.editSlaveValue.desc"></textarea>
+            <button id="ms-slave-item-submit-e" class="ms-slave-item-submit" data-bind="click: $root.clickSaveEditCity">Submit</button>
+            <button id="ms-slave-item-cancel-e" class="ms-slave-item-cancel" data-bind="click: $root.clickCancelEditCity">Cancel</button>
+        </div>
+
+    </script>
+
+
+</head>
+<body>
+<header>
+    <h1> Реализовать отображение Master - Slave. </h1>
+</header>
+<div id="masterslave" class="masterslave">
+    <input type="hidden" data-bind="value: getMasterId()">
+    <input type="hidden" id="slaveidedit" data-bind="value: getSlaveId()">
+
+    <div id="masterslave-master" class="masterslave-master">
+        <h2>Countries</h2>
+        <div id="ms-master-content" data-bind="foreach: {data:master, as: 'master'}">
+            <div class="ms-master-item" data-bind="click: $root.filterSlave, css: $root.getClassActiveItem( master )">
+                <input type="hidden" id="masterid" data-bind="value: master.id">
+                <p class="ms-master-item-title" data-bind="text: master.title"></p>
+                <p class="ms-master-item-text" data-bind="text: master.text"></p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="masterslave-slave" class="masterslave-slave">
+        <h2>Cities</h2>
+
+        <div class="ms-slave-item"  data-bind="visible: showAddFrom() === 1 ">
+            <button id="ms-slave-item-add" class="ms-slave-item-add" data-bind="click: clickAdd">+ Add city</button>
+        </div>
+
+        <div class="ms-slave-item"  data-bind="visible: $root.showAddFrom() === 2 ">
+            <p>Add city</p>
+            <input type="text" id="ms-slave-item-title" class="ms-slave-item-title" placeholder="City name..." data-bind="value: msSlaveItemTitle">
+            <textarea id="ms-slave-item-desc" class="ms-slave-item-desc" placeholder="City description..." data-bind="value: msSlaveItemDesc"></textarea>
+            <button id="ms-slave-item-submit" class="ms-slave-item-submit" data-bind="click: clickAddSubmit">Submit</button>
+            <button id="ms-slave-item-cancel" class="ms-slave-item-cancel" data-bind="click: clickAddCancel">Cancel</button>
+        </div>
+
+        <div id="ms-slave-content" data-bind="template:{name:itemSlaveTemplate,  foreach:slave,  as:'slave'}"></div>
+    </div>
+
+
+</div>
+<footer>
+    <h4>Valic Chepiga &copy; KnockoutJS, ver. 3.4.1</h4>
+</footer>
+
+<script src="js/knockout.js"></script>
+<script src="js/data.js"></script>
+<script src="js/workdata.js"></script>
+
+</body>
+</html>
