@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.glyphicon {
+    top: 1px;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-trash:before {
+    content: "\e020";
+}
+.glyphicon-pencil:before {
+    content: "\270f";
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 0.8em;
+    cursor: default;
+}
+
+header {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    background-color: #0072bc;
+    padding: 20px 0 20px 0;
+    color: #ffffff;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+    text-align: left;
+    padding: 25px 0 0 25px;
+    margin: 0;
+    color: #ffffff;
+    height: 40px;
+    background: darkslategrey;
+}
+
+.masterslave {
+    width: 70%;
+    min-height: 100%;
+    display: table;
+    padding: 20px 0 20px 50%;
+    margin-left: -30%;
+}
+
+.masterslave-master {
+    float: left;
+    display: table-cell;
+    width: 25%;
+}
+
+.masterslave-slave {
+    float: left;
+    display: table-cell;
+    padding-left: 2%;
+    width: 73%;
+}
+
+.ms-master-item {
+    background: #eeeeee;
+    margin-bottom: 3px;
+    padding: 10px;
+}
+
+.ms-master-item-title {
+    font-size: 1.5em;
+    color: #0072bc;
+}
+
+.item-active {
+    background: #0072bc;
+}
+
+.item-active p {
+    color: #ffffff;
+}
+
+.ms-slave-item-add {
+    border: none;
+    color: #ffffff;
+    background: #0072bc;
+    border-radius: 5px;
+    padding: 10px 25px;
+}
+
+.ms-slave-item {
+    border: solid 1px lightgray;
+    padding: 10px;
+    width: 100%;
+    display: table;
+}
+
+.ms-slave-item-info, .ms-slave-item-option {
+    display: table-cell;
+}
+
+.ms-slave-item-option {
+    width: 40px;
+    display: table-cell;
+    text-align-last: justify;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.ms-slave-item-title, .ms-slave-item-desc {
+    width: 100%;
+    resize: none;
+    margin-top: 10px;
+}
+
+.ms-slave-item-submit {
+    border: none;
+    color: #ffffff;
+    background: #0072bc;
+    border-radius: 5px;
+    padding: 10px 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.ms-slave-item-cancel {
+    border: solid 1px lightgray;
+    color: #000000;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 10px 25px;
+}
