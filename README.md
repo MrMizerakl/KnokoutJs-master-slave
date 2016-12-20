@@ -1,3 +1,3 @@
 # KnokoutJs-master-slave
-M-V-VM pattern, example
+MVVM pattern, example
 Master-Slave model using KnockoutJS
